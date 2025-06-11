@@ -1,4 +1,4 @@
-##This Class with Aura enabled is required for the LWC to work 
+//##This Class with Aura enabled is required for the LWC to work 
 
 
 public with sharing class EventRunningSheetController {
