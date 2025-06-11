@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Event Running Sheet" class="custom-card">
+
+        <div class="event-details slds-p-around_medium">
+            <p><strong>Event Name:</strong> {eventName}</p>
+            <p><strong>Event Date:</strong> {eventDate}</p>
+        </div>
+
+        <div class="slds-grid slds-wrap slds-p-horizontal_medium">
+            <template for:each={taskList} for:item="task">
+                <div key={task.Id} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-p-around_x-small">
+                    <div class="task-tile slds-box slds-theme_default slds-text-align_center">
+                        <p>{task.Task_Name__c}</p>
+                    </div>
+                </div>
+            </template>
+        </div>
+
+    </lightning-card>
+</template>
