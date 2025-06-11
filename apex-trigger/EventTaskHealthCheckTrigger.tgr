@@ -1,0 +1,14 @@
+trigger EventTaskHealthCheckTrigger on Event_Task__c (after insert,after update, after delete) {
+    if(trigger.isafter){
+        EventTaskHealthCheckTriggerHandler handler = new EventTaskHealthCheckTriggerHandler();
+        if(trigger.isInsert){
+            handler.handlerAfterInsert(trigger.new);
+        }
+        else if(trigger.isUpdate){
+            handler.handlerAfterUpdate(trigger.new, trigger.oldMap);
+        }
+        else if(trigger.isDelete){
+            handler.handlerAfterDelete(trigger.old);
+        }
+    }
+}
